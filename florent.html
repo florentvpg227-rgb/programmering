@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Intro</title>
+</head>
+<body>
+  <script src="http://koda.nu/simple.js">
+    var player = { x: 500, y: 200, size: 40, color: "gold", speed: random(-3, 3) };
+
+    var himmelFärg = mixColor(0, 0, random(256))
+
+    var bil = {
+        x: 500,
+        y: 500,
+        speed: 15,
+        url: "https://toppng.com/uploads/preview/cool-car-115494533474r4wov0lk6.png"
+    }
+ 
+    function update() {
+      clearScreen()
+ 
+    //   circle(player.x, player.y, player.size, player.color)
+      player.x = player.x + player.speed
+      player.y = player.y + player.speed
+      player.size++
+      player.color = mixColor(random(256), random(256), random(256))
+      player.speed = random(-10, 10)
+      // console.log("X är nu: " + player.x)
+
+      rectangle(0, 0, 2000, 500, himmelFärg) //Himmel
+      picture(bil.x, bil.y, bil.url, 300, 300)
+      bil.x = bil.x + bil.speed
+
+      if(bil.x > totalWidth - 300 || keyboard.d) {
+        bil.x = totalWidth -300
+        bil.url = "https://img.magnific.com/gratis-psd/valdsam-explosion-en-dramatisk-visualisering-av-intensiv-forbranning-och-forstorelse_191095-80345.jpg"
+      }
+
+      text(400, 300, 40, "car crash simulator:)", mixColor(random(256), random(256), random(256)))
+
+    }
+  </script>
+</body>
+</html>
+ 
