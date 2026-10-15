@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="http://koda.nu/simple.js">
+        var player = {
+            x: 400, 
+            y: 300, 
+            size: 40, 
+            color: "blue",
+            speed: 4
+        }
+
+        function update() {
+            clearScreen()
+            circle(player.x, player.y, player.size, player.color)
+
+            if(keyboard.d) {
+                player.x = player.x + player.speed
+            }
+
+            if(keyboard.a) {player.x = player.x - player.speed}
+
+        }
+    </script>
+</body>
+</html>
